@@ -7,7 +7,7 @@ class Model_Base
 	public function __construct(PDO $db = null)
 	{
 		//Dependency Injection
-		if (!$db)
+		if ($db)
 		{
 			$this->db = $db;
 		}
@@ -15,15 +15,16 @@ class Model_Base
 		{
 			$this->db = Factory::getDbo();
 		}
-
-		public function setDb(PDO $db)
-		{
-			$this->db = $db;
-		}
-
-		public function getDb()
-		{
-			return $this->db;
-		}
 	}
+	
+	public function setDb(PDO $db)
+	{
+		$this->db = $db;
+	}
+
+	public function getDb()
+	{
+		return $this->db;
+	}
+
 }
