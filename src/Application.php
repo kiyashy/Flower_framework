@@ -1,6 +1,7 @@
 <?php
 
 class Application {
+
 	protected $input;
 
 	public function execute()
@@ -24,6 +25,7 @@ class Application {
 	// Which controller to execute
 	public function routine()
 	{
+		// what does this mean ?
 		$controller = $this->input->get('controller');
 
 		$class = 'Controller_'. ucfirst($controller);
@@ -33,7 +35,6 @@ class Application {
 			throw new Exception('Controller not found', 404);
 		}
 		
-
 		$controller = new $class($this->input);
 
 		return $controller;
