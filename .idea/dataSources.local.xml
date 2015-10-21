@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - flower@localhost" uuid="77a7f00d-9026-4da4-b0ba-73605171c590">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>flower.*</schema-pattern>
+      <default-schemas>flower.*</default-schemas>
+    </data-source>
+  </component>
+</project>

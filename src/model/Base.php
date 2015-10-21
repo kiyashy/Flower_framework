@@ -2,6 +2,11 @@
 
 class Model_Base
 {
+	/**
+	 * Property db.
+	 *
+	 * @var PDO
+	 */
 	protected $db;
 
 	public function __construct(PDO $db = null)

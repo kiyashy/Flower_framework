@@ -1,9 +1,15 @@
 <?php
 
 class Application {
-
+	/**
+	 * Property input.
+	 *
+	 * @var Input_Input
+	 */
 	protected $input;
 
+
+	//main ecutexer for the whole app.
 	public function execute()
 	{
 
@@ -27,7 +33,6 @@ class Application {
 	{
 		// what does this mean ?
 		$controller = $this->input->get('controller');
-
 		$class = 'Controller_'. ucfirst($controller);
 
 		if (!class_exists($class))

@@ -2,6 +2,11 @@
 
 class Controller_Base
 {
+	/**
+	 * Property input.
+	 *
+	 * @var Input_Input
+	 */
 	protected $input;
 
 	public function __construct($input)
@@ -17,6 +22,8 @@ class Controller_Base
 		{
 			throw new Exception('Template : ' . $file . 'not exist.', 500);
 		}
+
+		extract($data);
 
 		//Start render template
 		//Output buffer

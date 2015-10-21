@@ -11,7 +11,8 @@ class Input_Input {
 			'request' => $_REQUEST,
 			);
 	}
-	public function get ($name, $default = null , $method = 'get')
+	
+	public function get ($name, $default = null , $method = 'request')
 	{
 		if (isset($this->request[$method][$name]))
 		{
