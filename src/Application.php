@@ -9,16 +9,16 @@ class Application {
 	protected $input;
 
 
-	//main ecutexer for the whole app.
+	//main executer for the whole app.
 	public function execute()
 	{
-
+		// step1. INIT 最初建置
 		$this->init();
-
+		// step2. ROUTINE
 		$controller = $this->routine();
-
+		// step3. RENDER
 		$output = $this->render($controller);
-
+		// step4. VIEW
 		$this->respond($output);
 	}
 
@@ -26,7 +26,7 @@ class Application {
 	public function init()
 	{
 		$this->input = new Input_Input;
-	}
+}
 
 	// Which controller to execute
 	public function routine()

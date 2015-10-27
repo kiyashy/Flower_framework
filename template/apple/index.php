@@ -23,6 +23,7 @@ function double($k)
 
 <table border = '1'>
 	<tr>
+		<th>EDIT</th>
 		<th>ID</th>
 		<th>Title</th>
 		<th>URL</th>
@@ -32,6 +33,11 @@ function double($k)
 	<?php foreach ($apples as $k => $apple): ?>
 
 		<tr class = '<?php double($k);  ?>'>
+			<td>
+				<a href = "index.php?controller=Guava&action=update&input=<?php echo $apple['id']?>">
+				Edit
+				</a>
+			</td>
 			<td>
 				<?php echo $apple['id'] ?>
 			</td>

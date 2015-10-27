@@ -16,7 +16,7 @@
 		min-width:100px;
 	}
 </style>
-<h1>Apple Form</h1>
+<h1>Create Apple Form</h1>
 
 <form action="index.php?controller=Guava&action=save" method = "post">
 	<div class="form-control">

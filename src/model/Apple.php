@@ -1,6 +1,5 @@
 <?php 
-//get
-//
+
 class Model_Apple extends Model_Base
 {
 	/**
@@ -10,7 +9,7 @@ class Model_Apple extends Model_Base
 	 */
 	public function getApples()
 	{
-		
+
 		$sql = 'SELECT * FROM apples WHERE state=1';
 
 		$stmt = $this->db->query($sql);
@@ -19,6 +18,24 @@ class Model_Apple extends Model_Base
 
 		return $apples;
 	}
+
+	/**
+	 * getApple
+	 *
+	 * @return  array
+	 */
+	public function getApple($num)
+	{
+
+		$sql = "SELECT * FROM apples WHERE id='$num'";
+
+		$stmt = $this->db->query($sql);
+
+		$apple = $stmt->fetchAll();
+
+		return $apple;
+	}
+
 
 	public function create($data)
 	{
@@ -31,6 +48,23 @@ class Model_Apple extends Model_Base
 		// Build SQL
 
 		$sql = "INSERT INTO apples (title,  state, url, introtext) VALUES(" . implode(',', $data) .")";
+
+		$this->db->query($sql);
+
+		return true ;
+	}
+
+	public function update($data)
+	{
+		//Quote
+		// Build SQL
+		$title = $data['title'];
+		$intro = $data['introtext'];
+		$url = $data['url'];
+		$state = $data['state'];
+		$id = $data['id'];
+
+		$sql = "UPDATE apples SET title ='$title', url='$url',introtext='$intro',state='$state' WHERE id='$id'";
 
 		$this->db->query($sql);
 

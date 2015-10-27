@@ -69,4 +69,14 @@ class Controller_Guava extends Controller_Base
 	{
 		header('Location: '. $url);
 	}
+
+	public function updateAction()
+	{
+		$arr = $_GET;
+		$model = new Model_Apple();
+		$apple = $model->getApple($arr['input']);
+//		echo Helper::show($apple);
+		return $this->render('apple/formEdit', array('apple' => $apple));
+	}
+
 }
