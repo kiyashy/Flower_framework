@@ -34,7 +34,7 @@ function double($k)
 
 		<tr class = '<?php double($k);  ?>'>
 			<td>
-				<a href = "index.php?controller=Guava&action=update&input=<?php echo $apple['id']?>">
+				<a href = "index.php?controller=Guava&action=update&id=<?php echo $apple['id']?>">
 				Edit
 				</a>
 			</td>

@@ -10,7 +10,7 @@ class Model_Apple extends Model_Base
 	public function getApples()
 	{
 
-		$sql = 'SELECT * FROM apples WHERE state=1';
+		$sql = 'SELECT * FROM apples ';
 
 		$stmt = $this->db->query($sql);
 
@@ -31,7 +31,7 @@ class Model_Apple extends Model_Base
 
 		$stmt = $this->db->query($sql);
 
-		$apple = $stmt->fetchAll();
+		$apple = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		return $apple;
 	}
@@ -64,7 +64,7 @@ class Model_Apple extends Model_Base
 		$state = $data['state'];
 		$id = $data['id'];
 
-		$sql = "UPDATE apples SET title ='$title', url='$url',introtext='$intro',state='$state' WHERE id='$id'";
+		$sql = "UPDATE apples SET title ='{$title}', url='{$url}',introtext='{$intro}',state='{$state}' WHERE id='{$id}'";
 
 		$this->db->query($sql);
 

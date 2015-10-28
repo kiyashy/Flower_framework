@@ -74,7 +74,7 @@ class Controller_Guava extends Controller_Base
 	{
 		$arr = $_GET;
 		$model = new Model_Apple();
-		$apple = $model->getApple($arr['input']);
+		$apple = $model->getApple($arr['id']);
 //		echo Helper::show($apple);
 		return $this->render('apple/formEdit', array('apple' => $apple));
 	}
